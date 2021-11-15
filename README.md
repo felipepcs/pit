@@ -1,1 +1,2 @@
-# pit
+# PIT
+COLÉGIO E FACULDADE COTEMIG
