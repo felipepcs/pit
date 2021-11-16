@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 14-Nov-2021 às 18:34
+-- Tempo de geração: 15-Nov-2021 às 21:32
 -- Versão do servidor: 8.0.18
 -- versão do PHP: 7.3.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `oldpal`
+-- Banco de dados: `oldpit`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `administrador`
 --
 
-DROP TABLE IF EXISTS `administrador`;
 CREATE TABLE IF NOT EXISTS `administrador` (
   `admin_id` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
@@ -43,69 +42,47 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 --
 
 INSERT INTO `administrador` (`admin_id`, `nome`, `email`, `senha`, `acesso`) VALUES
-(1, 'Isabella Letícia', 'isabella@gmail.com.b', '45678312', 1),
-(2, 'Edsandra Antônia', 'edsandra@gmail.com.b', '78654312', 2),
-(3, 'Ingrid Luiza', 'ingrid@gmail.com.br', '12367845', 5),
-(4, 'Anselmo Souza', 'anselmo@gmail.com.br', '87654321', 4),
-(5, 'Felipe Leonardo', 'felipe@gmail.com.br ', '12345678', 5),
-(6, 'Akira Souza', 'akira@gmail.com.br', ' 2021202', 6);
+(1, 'Isabella', 'isabella@gmail.com.b', '4af20109', 356),
+(2, 'Edsandra', 'edsandra@gmail.com.b', 'f6742ad0', 0),
+(3, 'Anselmo', 'anselmo@gmail.com.br', 'b77d8b33', 77),
+(4, 'Ingrid', 'ingrid@gmail.com.br', '7c222fb2', 1),
+(5, 'Felipe', 'felipe@gmail.com.br', '8714e0e0', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `master`
+-- Estrutura da tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `master`;
-CREATE TABLE IF NOT EXISTS `master` (
-  `master_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL,
+  `cpf` bigint(11) NOT NULL,
+  `telefone` int(9) NOT NULL,
+  `endereco` varchar(20) NOT NULL,
+  `sexo` char(2) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `email` varchar(20) NOT NULL,
   `senha` varchar(8) NOT NULL,
-  PRIMARY KEY (`master_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Extraindo dados da tabela `master`
+-- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `master` (`master_id`, `nome`, `email`, `senha`) VALUES
-(1, 'Gabriel Henrique ', 'gabriel@gmail.com.br', '21436587'),
-(2, 'Arthur Borges', 'arthur@gmail.com.br', '65312478'),
-(3, 'Letícia Gonçalves', 'leticia@gmail.com.br', '64478912'),
-(4, 'Nikolas Emanuel', 'nikolas@gmail.com.br', '56834211'),
-(5, 'Emanuelle Vitória', 'emanuelle@gmail.com', '00096723'),
-(6, 'Sandy Luiza', 'sandy@gmail.com.br', '20222017');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `secundario`
---
-
-DROP TABLE IF EXISTS `secundario`;
-CREATE TABLE IF NOT EXISTS `secundario` (
-  `secundario_id` int(11) NOT NULL,
-  `nome` varchar(45) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `senha` varchar(8) NOT NULL,
-  PRIMARY KEY (`secundario_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `secundario`
---
-
-INSERT INTO `secundario` (`secundario_id`, `nome`, `email`, `senha`) VALUES
-(1, 'Cotemig Teste ', 'cotemig@gmail.com.br', '22217085'),
-(2, 'Cliente Old ', 'cliente@gmail.com.br', '16482918'),
-(3, 'Pietra', 'Pietra@gmail.com.br', '12181715'),
-(4, 'Laura', 'laura@gmail.com.br', '55008905'),
-(5, 'Heitor Bitencourt', 'heitor@gmail.com.br', '34367809'),
-(6, 'Davi', 'davi@gmail.com.br', '16899094');
+INSERT INTO `usuario` (`id`, `cpf`, `telefone`, `endereco`, `sexo`, `nome`, `email`, `senha`) VALUES
+(1, 85269, 912121313, 'Rua da Maria', 'M', 'Maria', 'maria@gmail.com', 'b2b8f80e'),
+(2, 0, 921212323, 'Rua do Marcelo', 'M', 'Marcelo', 'marcelo@gmail.com', '0244ed7a'),
+(3, 9223372036854775807, 931313232, 'Rua da Teresa', 'F', 'Tereza', 'tereza@gmail.com', '81a68adb'),
+(4, 0, 956567878, 'Rua do Lillian', 'NI', 'Lillian', 'lillian@gmail.com', 'c0a81ba1'),
+(5, 0, 987867678, 'Rua do Carlos', 'M', 'Carlos', 'carlos@gmail.com', '3a18a012'),
+(6, 6606, 966685454, 'Rua do Osmar', 'NI', 'Osmar', 'osmar@gmail.com', 'e60e3475'),
+(7, 0, 990909898, 'Rua da Marina', 'F', 'Marina', 'marina@gmail.com', '5cd7cb55'),
+(8, 5, 956578786, 'Rua da Monica', 'F', 'Monica', 'monica@gmail.com', '485dde1e'),
+(9, 9, 912345678, 'Rua do Vinicius', 'M', 'Vinicius', 'vinicius@gmail.com', 'd682e94e'),
+(10, 98520, 913139292, 'Rua da Marta', 'F', 'Marta', 'marta@gmail.com', 'e9db8c08');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
